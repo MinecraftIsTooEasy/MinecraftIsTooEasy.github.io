@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文档导航</title>
-    <link rel="icon" href="/files/icon.ico" type="image/x-icon">
+    <title data-i18n="tutorials_index">教程索引</title>
+    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
     <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/markdown-parser.js"></script>
 </head>
 
 <body>
@@ -19,9 +21,17 @@
             });
     </script>
 
-    <p>
-        待建设
-    </p>
+    <div class="container">
+        <h1 data-i18n="tutorials_index">教程索引</h1>
+        <hr>
+        <div id="tutorials-index"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDocIndex('tutorials', 'tutorials-index');
+        });
+    </script>
 
     <hr>
 
