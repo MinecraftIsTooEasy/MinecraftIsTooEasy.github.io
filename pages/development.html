@@ -1,50 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>开发指南</title>
-    <link rel="icon" href="/files/icon.ico" type="image/x-icon">
+    <title data-i18n="development_index">开发文档索引</title>
+    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
     <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/markdown-parser.js"></script>
 </head>
 
 <body>
-    <div id="header"></div>
-    <script>
-        fetch("/pages/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-    </script>
+<div id="header"></div>
+<script>
+    fetch("/pages/header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+</script>
 
-    <ul class="cases-list">
-        <li>
-            <a href="/pages/docs/environment-fml1.html">FML1搭建环境教程</a>
-        </li>
-        <li>
-            <a href="/pages/docs/environment-fml3.html">FML3搭建环境教程</a>
-        </li>
-        <li>
-            <a href="/pages/docs/ManyLib_old.html">ManyLib开发文档</a>
-        </li>
-        <li>
-            <a href="/pages/docs/RIC.html">锈铁核心开发文档</a>
-        </li>
-    </ul>
-
+<div class="container">
+    <h1 data-i18n="development_index">开发文档索引</h1>
     <hr>
+    <div id="development-index"></div>
+    <div id="doc-content" class="markdown-content"></div>
+</div>
 
-    <div id="footer"></div>
+<script>
+    const docs = [
+        { name: 'dev_env_fishv1', path: '/docs/dev/dev_env_fishv1.md' },
+        { name: 'dev_env_fishv3', path: '/docs/dev/dev_env_fishv3.md' },
+        { name: 'manylib', path: '/docs/dev/manylib.md' },
+        { name: 'rusted_iron_core', path: '/docs/dev/rusted_iron_core.md' }
+    ];
 
-    <script>
-        fetch("/pages/footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
+    let docTitles = {};
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        await loadAllDocTitles();
+        renderDocIndex();
+    });
+
+    async function loadAllDocTitles() {
+        const titlePromises = docs.map(async (doc) => {
+            try {
+                const response = await fetch(doc.path);
+                if (response.ok) {
+                    const markdown = await response.text();
+                    const title = extractTitle(markdown);
+                    docTitles[doc.path] = title || doc.name;
+                } else {
+                    docTitles[doc.path] = doc.name;
+                }
+            } catch (error) {
+                docTitles[doc.path] = doc.name;
+            }
+        });
+
+        await Promise.all(titlePromises);
+    }
+
+    function renderDocIndex() {
+        const indexContainer = document.getElementById('development-index');
+        if (!indexContainer) return;
+
+        let html = '<ul class="cases-list">';
+        docs.forEach(doc => {
+            const displayName = docTitles[doc.path] || doc.name;
+            html += `<li><a href="#" onclick="loadDoc('${doc.path}'); return false;">${displayName}</a></li>`;
+        });
+        html += '</ul>';
+
+        indexContainer.innerHTML = html;
+    }
+
+    function loadDoc(path) {
+        const contentContainer = document.getElementById('doc-content');
+        if (!contentContainer) return;
+
+        contentContainer.innerHTML = '<p>Loading...</p>';
+
+        fetch(path)
+            .then(response => {
+                if (!response.ok) throw new Error('Document loading failed');
+                return response.text();
+            })
+            .then(markdown => {
+                const html = parseMarkdown(markdown);
+                contentContainer.innerHTML = `<hr>${html}`;
+            })
+            .catch(error => {
+                contentContainer.innerHTML = `<p>Error: ${error.message}</p>`;
             });
-    </script>
+    }
+
+    function extractTitle(markdown) {
+        const match = markdown.match(/^# (.*$)/m);
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+</script>
+
+<hr>
+
+<div id="footer"></div>
+
+<script>
+    fetch("/pages/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+</script>
 </body>
 
 </html>

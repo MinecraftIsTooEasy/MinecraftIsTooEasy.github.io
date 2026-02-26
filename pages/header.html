@@ -1,14 +1,20 @@
 <div id="header">
     <header>
         <header class="universal-header">
-            <div class="header-logo">Modded MITE</div>
-            <nav class="header-nav">
-                <a href="/index.html" class="header-nav-button">首页</a>
-                <a href="/pages/resource.html" class="header-nav-button">资源</a>
-                <a href="/pages/docs-navigation.html" class="header-nav-button">教程</a>
-                <a href="/pages/development.html" class="header-nav-button">开发</a>
-                <a href="/pages/contact.html" class="header-nav-button">关于</a>
-            </nav>
+            <div class="header-left">
+                <div class="header-logo" data-i18n="site_title">Modded MITE</div>
+                <nav class="header-nav">
+                    <a href="/index.html" class="header-nav-button" data-i18n="nav_home">首页</a>
+                    <a href="/pages/resource.html" class="header-nav-button" data-i18n="nav_resources">资源</a>
+                    <a href="/pages/docs-navigation.html" class="header-nav-button" data-i18n="nav_tutorials">教程</a>
+                    <a href="/pages/development.html" class="header-nav-button" data-i18n="nav_development">开发</a>
+                    <a href="/pages/contact.html" class="header-nav-button" data-i18n="nav_about">关于</a>
+                </nav>
+            </div>
+            <div class="language-switcher">
+                <button class="language-btn" data-lang="zh" onclick="switchLanguage('zh')">简体中文</button>
+                <button class="language-btn" data-lang="en" onclick="switchLanguage('en')">English</button>
+            </div>
         </header>
     </header>
 </div>
