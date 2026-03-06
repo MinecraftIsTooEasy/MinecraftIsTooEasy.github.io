@@ -18,34 +18,21 @@
 ## 文件准备篇
 
 1. 下载并安装Java17, 并配置环境变量. 且你需要知晓安装的路径. 此步可根据网络上的教程.
-2. 在 `C:\Users\用户名\.m2` 新建名为 `repository` 的文件夹.
-3. 按下Win+R, 输入 `%USERPROFILE%/.m2/repository` 检查是否创建成功.
-4. 下载 [fml-loom-0.1.local-repo.zip](https://github.com/XiaoYuOvO/fml-loom/releases/download/0.1/fml-loom-0.1.local-repo.zip), 解压到刚才创建的目录. 检查是否多嵌套了文件夹, 我们的文件树结构应该类似如下:
-
-```
-repository
- ├── fml-loom
- └── net
-```
-
-5. 获取最新的FishModLoader的jar文件, 保存到适宜的目录中.
-6. 获取MITE核心的jar文件(例如自行文件覆盖, 或下载某一客户端并提取), 暂时备用.
-7. 获取MITE的资源包, 暂时备用.
+2. 获取MITE的资源包, 暂时备用.
 
 ---
 
 ## 项目构建篇
 
-1. 找到任意FML3的项目, 例如从[组织项目库](https://github.com/orgs/MinecraftIsTooEasy/repositories)下载.
-2. 用IDEA打开其中的 `build.gralde` 文件. 这是项目的构建脚本, 我们能否运行起项目的关键.
+1. 下载[模组开发模板](https://github.com/MinecraftIsTooEasy/fish-example-mod)或别的项目.
+2. 用IDEA打开其中的 `build.gradle` 文件. 这是项目的构建脚本, 是我们运行项目的关键.
 3. 打开后项目应该会自动开始构建, 等待片刻.
 4. 若成功构建, 可直接跳过本节
 5. 你可能会遇到以下问题:
     - Java版本过低(例如8), 进入设置, 项目结构, 将SDK和语言水平设为17.
-    - FishModLoader目录不对, 进入构建脚本, 将相关路径改为你在上节准备的.
     - 找不到MITE.jar文件, 根据报错给的目录, 将你在上节准备的文件移动过去.
     - 缺少库, 这可能是你拿到的项目有一些自定义的前置, 例如ManyLib等. 想办法下载相关文件, 并将构建脚本中相关路径设为你的.
-6. 以防你不知道, 可以双击Ctrl, 输入 `gradle build` 以重新构建项目.
+6. 以防你不知道, 可以在gradle菜单中点击循环图标来刷新项目(见下节).
 
 ---
 
@@ -68,3 +55,9 @@ repository
 3. 若以同样的方式引入sources文件, 则能看到源码, 且查找用法等功能也能使用.
 4. 访问加宽(accessWidener)需要在构建脚本和fml.mod.json中都指定. 前者在开发环境, 而后者在用户环境.
 5. 在Fabric-like的环境中, 大部分功能要自己修改mc代码实现. 我们通过Mixin系统实现这个操作.
+
+---
+
+## 注意事项
+
+1. 本教程适用于较新的fml模组开发环境, 部分旧项目可能仍在使用旧环境, 只需略微修改构建脚本即可.
