@@ -1,84 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" footer="width=device-width, initial-scale=1.0">
-    <title>FishModLoader的介绍</title>
-    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
-</head>
-
-<body>
-    <div id="header"></div>
-    <script>
-        fetch("/pages/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-    </script>
-
-    <h1>FishModLoader</h1>
-
-    <hr>
-
-    <p>
-        MITE的模组通过<a href="https://github.com/XiaoYuOvO/FishModLoader">FishModLoader</a>加载. 可称为小鱼模组加载器, 也可称为FML.
-    </p>
-
-    <p>
-        它在3.0.0版本之前, 以类似<a href="https://www.mcmod.cn/class/30.html">Forge</a>的形式进行开发, 在3.0.0时进行了代码重构, 成为类<a
-            href="https://www.mcmod.cn/class/1411.html">Fabric</a>的加载器, 它们有以下区别:
-
-    <table>
-        <tr>
-            <td></td>
-            <td>混淆表</td>
-            <td>开发环境</td>
-            <td>接口数</td>
-            <td>兼容性</td>
-            <td>大型模组数</td>
-            <td>小型模组数</td>
-            <td>社区</td>
-        </tr>
-        <tr>
-            <td>FML1</td>
-            <td>自研</td>
-            <td>导出类</td>
-            <td>少</td>
-            <td>差</td>
-            <td>多</td>
-            <td>少</td>
-            <td>几乎消失</td>
-        </tr>
-        <tr>
-            <td>FML3</td>
-            <td>Forge映射</td>
-            <td>Loom环境</td>
-            <td>多</td>
-            <td>好</td>
-            <td>少</td>
-            <td>多</td>
-            <td>未来可期</td>
-        </tr>
-    </table>
-
-    <p>
-        因此, 如果你有志于MITE模组开发, 请务必选择FML3. 联系我们, 以获取细致的指导.
-    </p>
-
-    <hr>
-
-    <div id="footer"></div>
-
-    <script>
-        fetch("/pages/footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
-</body>
-
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FishModLoader 版本差异与开发环境说明。"
+      data-i18n-content="page_description_fml"
+    />
+    <meta name="theme-color" content="#b42318" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Modded MITE" />
+    <meta property="og:title" content="FishModLoader 介绍 - Modded MITE" />
+    <meta
+      property="og:description"
+      content="FishModLoader 版本差异与开发环境说明。"
+    />
+    <meta
+      property="og:url"
+      content="https://minecraftistooeasy.github.io/pages/about-fml.html"
+    />
+    <link
+      rel="canonical"
+      href="https://minecraftistooeasy.github.io/pages/about-fml.html"
+    />
+    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <title data-i18n="page_title_fml">FishModLoader 介绍 - Modded MITE</title>
+    <script src="../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../scripts/i18n.js" defer></script>
+    <script src="../scripts/site.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      async
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content"
+      >跳到主要内容</a
+    >
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+      <header class="page-heading">
+        <h1>FishModLoader</h1>
+        <p class="lead" data-i18n-html="fml_intro_html">
+          MITE 模组通过 FishModLoader 加载，简称 FML。
+        </p>
+      </header>
+      <section class="content-section" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading" data-i18n="fml_comparison">版本对比</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <caption data-i18n="fml_comparison">
+              版本对比
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="fml_version">版本</th>
+                <th scope="col" data-i18n="mappings">映射</th>
+                <th scope="col" data-i18n="dev_environment">开发环境</th>
+                <th scope="col" data-i18n="api_count">接口数量</th>
+                <th scope="col" data-i18n="compatibility">兼容性</th>
+                <th scope="col" data-i18n="large_mods">大型模组</th>
+                <th scope="col" data-i18n="small_mods">小型模组</th>
+                <th scope="col" data-i18n="community">社区状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">FML1</th>
+                <td data-i18n="self_mapping">自研</td>
+                <td data-i18n="exported_classes">导出类</td>
+                <td data-i18n="few">少</td>
+                <td data-i18n="poor">较差</td>
+                <td data-i18n="many">多</td>
+                <td data-i18n="few">少</td>
+                <td data-i18n="legacy">历史生态</td>
+              </tr>
+              <tr>
+                <th scope="row">FML3</th>
+                <td data-i18n="forge_mapping">Forge 映射</td>
+                <td data-i18n="loom_environment">Loom 环境</td>
+                <td data-i18n="many">多</td>
+                <td data-i18n="good">较好</td>
+                <td data-i18n="few">少</td>
+                <td data-i18n="many">多</td>
+                <td data-i18n="active">持续发展</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="notice" data-i18n="fml_recommendation">
+          新项目应优先选择 FML3。需要开发指导时，可通过关于页面联系社区。
+        </p>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
 </html>
