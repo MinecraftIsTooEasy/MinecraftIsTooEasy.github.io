@@ -1,67 +1,151 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MITE 资源包、模组目录与社区资源整合下载。" data-i18n-content="page_description_resources">
-    <meta name="theme-color" content="#b42318">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Modded MITE">
-    <meta property="og:title" content="资源 - Modded MITE">
-    <meta property="og:description" content="MITE 资源包、模组目录与社区资源整合下载。">
-    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/resource.html">
-    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/resource.html">
-    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MITE 资源包、模组目录与社区资源整合下载。"
+      data-i18n-content="page_description_resources"
+    />
+    <meta name="theme-color" content="#b42318" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Modded MITE" />
+    <meta property="og:title" content="资源 - Modded MITE" />
+    <meta
+      property="og:description"
+      content="MITE 资源包、模组目录与社区资源整合下载。"
+    />
+    <meta
+      property="og:url"
+      content="https://minecraftistooeasy.github.io/pages/resource.html"
+    />
+    <link
+      rel="canonical"
+      href="https://minecraftistooeasy.github.io/pages/resource.html"
+    />
+    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles.css" />
     <title data-i18n="page_title_resources">资源 - Modded MITE</title>
     <script src="../scripts/jquery-4.0.0.min.js" defer></script>
     <script src="../scripts/i18n.js" defer></script>
     <script src="../scripts/site.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" async
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" async></script>
-</head>
-<body>
-    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      async
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content"
+      >跳到主要内容</a
+    >
     <div id="site-header"></div>
     <main id="main-content" class="site-main site-container">
-        <header class="page-heading">
-            <h1 data-i18n="resources_heading">资源</h1>
-            <p class="lead" data-i18n="page_description_resources">MITE 资源包、模组目录与社区资源整合下载。</p>
-        </header>
+      <header class="page-heading">
+        <h1 data-i18n="resources_heading">资源</h1>
+        <p class="lead" data-i18n="page_description_resources">
+          MITE 资源包、模组目录与社区资源整合下载。
+        </p>
+      </header>
 
-        <section class="content-section" aria-labelledby="resource-packs-heading">
-            <h2 id="resource-packs-heading" data-i18n="resource_packs">资源包</h2>
-            <p data-i18n-html="resource_pack_desc_html">MITE 默认识别名为 <strong>MITE Resource Pack 1.6.4</strong> 的文件夹或 ZIP。</p>
-            <p data-i18n="download_resource_pack">若游戏缺少资源包，可从以下地址下载：</p>
-            <ul class="link-list">
-                <li><a href="https://cdn.jsdelivr.net/gh/MinecraftIsTooEasy/minecraftistooeasy.github.io@main/files/resourcepacks/%5B16x%5DMITE%E6%96%B0%E8%AF%91%E5%8E%9F%E7%89%88%E8%B5%84%E6%BA%90%E5%8C%85.zip" data-i18n="mite_translated_pack_proxy">MITE 新译原版资源包（CDN）</a></li>
-                <li><a href="../files/resourcepacks/%5B16x%5DMITE%E6%96%B0%E8%AF%91%E5%8E%9F%E7%89%88%E8%B5%84%E6%BA%90%E5%8C%85.zip" data-i18n="mite_translated_pack_direct">MITE 新译原版资源包（直链）</a></li>
-                <li><a href="resource-pack-usage.html" data-i18n="resource_pack_usage">查看资源包安装方法</a></li>
-            </ul>
-        </section>
+      <section class="content-section" aria-labelledby="resource-packs-heading">
+        <h2 id="resource-packs-heading" data-i18n="resource_packs">资源包</h2>
+        <p data-i18n-html="resource_pack_desc_html">
+          MITE 默认识别名为 <strong>MITE Resource Pack 1.6.4</strong> 的文件夹或
+          ZIP。
+        </p>
+        <p data-i18n="download_resource_pack">
+          若游戏缺少资源包，可从以下地址下载：
+        </p>
+        <ul class="link-list">
+          <li>
+            <a
+              href="https://cdn.jsdelivr.net/gh/MinecraftIsTooEasy/minecraftistooeasy.github.io@main/files/resourcepacks/%5B16x%5DMITE%E6%96%B0%E8%AF%91%E5%8E%9F%E7%89%88%E8%B5%84%E6%BA%90%E5%8C%85.zip"
+              data-i18n="mite_translated_pack_proxy"
+              >MITE 新译原版资源包（CDN）</a
+            >
+          </li>
+          <li>
+            <a
+              href="../files/resourcepacks/%5B16x%5DMITE%E6%96%B0%E8%AF%91%E5%8E%9F%E7%89%88%E8%B5%84%E6%BA%90%E5%8C%85.zip"
+              data-i18n="mite_translated_pack_direct"
+              >MITE 新译原版资源包（直链）</a
+            >
+          </li>
+          <li>
+            <a href="resource-pack-usage.html" data-i18n="resource_pack_usage"
+              >查看资源包安装方法</a
+            >
+          </li>
+        </ul>
+      </section>
 
-        <section class="content-section" aria-labelledby="mods-heading">
-            <h2 id="mods-heading" data-i18n="mods">模组</h2>
-            <p data-i18n-html="mods_desc_html">绝大多数 MITE 模组通过 FishModLoader 加载，简称 FML。</p>
-            <ul class="link-list">
-                <li><span data-i18n="fml3_mods_intro">FML3+ 模组目录</span>: <a href="https://www.kdocs.cn/l/cabc4n66CYbJ" data-i18n="current_catalog">当前推荐目录</a> / <a href="fml3-mods.html" data-i18n="archived_catalog">站内历史目录</a></li>
-                <li><a href="fml1-mods.html" data-i18n="fml1_mods_intro">FML1 模组说明</a></li>
-            </ul>
-        </section>
+      <section class="content-section" aria-labelledby="mods-heading">
+        <h2 id="mods-heading" data-i18n="mods">模组</h2>
+        <p data-i18n-html="mods_desc_html">
+          绝大多数 MITE 模组通过 FishModLoader 加载，简称 FML。
+        </p>
+        <ul class="link-list">
+          <li>
+            <span data-i18n="fml3_mods_intro">FML3+ 模组目录</span>:
+            <a
+              href="https://www.kdocs.cn/l/cabc4n66CYbJ"
+              data-i18n="current_catalog"
+              >当前推荐目录</a
+            >
+            /
+            <a href="fml3-mods.html" data-i18n="archived_catalog"
+              >站内历史目录</a
+            >
+          </li>
+          <li>
+            <a href="fml1-mods.html" data-i18n="fml1_mods_intro"
+              >FML1 模组说明</a
+            >
+          </li>
+        </ul>
+      </section>
 
-        <section class="content-section" aria-labelledby="bundles-heading">
-            <h2 id="bundles-heading" data-i18n="resource_bundles">资源整合</h2>
-            <p data-i18n="password_note">下列网盘的密码（提取码）均为 mite。</p>
-            <ul class="link-list">
-                <li><a href="https://www.123pan.com/s/ql9fjv-sNWx.html" data-i18n="new_bundle_main">新资源整合主链接（123 云盘）</a></li>
-                <li><a href="https://drive.google.com/drive/folders/1xg9NGwlPZ9Pex_DgDq-dzzuf6wL9kfBJ?usp=sharing" data-i18n="new_bundle_lite">新资源整合精简版（Google Drive）</a></li>
-                <li><a href="https://pan.huang1111.cn/s/A68xghB" data-i18n="goblin_backup">地精科技站资源备份（huang1111 云盘）</a></li>
-            </ul>
-        </section>
+      <section class="content-section" aria-labelledby="bundles-heading">
+        <h2 id="bundles-heading" data-i18n="resource_bundles">资源整合</h2>
+        <p data-i18n="password_note">下列网盘的密码（提取码）均为 mite。</p>
+        <ul class="link-list">
+          <li>
+            <a
+              href="https://www.123pan.com/s/ql9fjv-sNWx.html"
+              data-i18n="new_bundle_main"
+              >新资源整合主链接（123 云盘）</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://drive.google.com/drive/folders/1xg9NGwlPZ9Pex_DgDq-dzzuf6wL9kfBJ?usp=sharing"
+              data-i18n="new_bundle_lite"
+              >新资源整合精简版（Google Drive）</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://pan.huang1111.cn/s/A68xghB"
+              data-i18n="goblin_backup"
+              >地精科技站资源备份（huang1111 云盘）</a
+            >
+          </li>
+        </ul>
+      </section>
     </main>
     <div id="site-footer"></div>
-</body>
+  </body>
 </html>

@@ -1,96 +1,178 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FishModLoader 3 开发环境搭建说明。">
-    <meta name="theme-color" content="#b42318">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Modded MITE">
-    <meta property="og:title" content="FML3 环境搭建 - Modded MITE">
-    <meta property="og:description" content="FishModLoader 3 开发环境搭建说明。">
-    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/docs/fml3-environment.html">
-    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/docs/fml3-environment.html">
-    <link rel="icon" href="../../files/moddedmite_32x.ico" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FishModLoader 3 开发环境搭建说明。" />
+    <meta name="theme-color" content="#b42318" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Modded MITE" />
+    <meta property="og:title" content="FML3 环境搭建 - Modded MITE" />
+    <meta
+      property="og:description"
+      content="FishModLoader 3 开发环境搭建说明。"
+    />
+    <meta
+      property="og:url"
+      content="https://minecraftistooeasy.github.io/pages/docs/fml3-environment.html"
+    />
+    <link
+      rel="canonical"
+      href="https://minecraftistooeasy.github.io/pages/docs/fml3-environment.html"
+    />
+    <link rel="icon" href="../../files/moddedmite_32x.ico" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
     <title>FML3 环境搭建 - Modded MITE</title>
     <script src="../../scripts/jquery-4.0.0.min.js" defer></script>
     <script src="../../scripts/i18n.js" defer></script>
     <script src="../../scripts/site.js" defer></script>
-</head>
-<body>
-    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content"
+      >跳到主要内容</a
+    >
     <div id="site-header"></div>
     <main id="main-content" class="site-main site-container">
-        <header class="page-heading">
-            <h1 id="document-title">Fish v3 环境搭建</h1>
-        </header>
-        <div class="doc-layout">
+      <header class="page-heading">
+        <h1 id="document-title">Fish v3 环境搭建</h1>
+      </header>
+      <div class="doc-layout">
         <nav class="doc-sidebar" aria-labelledby="document-list-heading">
-            <h2 id="document-list-heading" data-i18n="document_list">文档列表</h2>
-            <ul class="doc-list">
-                <li><a class="doc-link active" aria-current="page" href="fml3-environment.html" data-i18n="fml3_env_setup">FML3 环境搭建</a></li>
-                <li><a class="doc-link" href="manylib.html" data-i18n="manylib_docs">ManyLib 开发文档</a></li>
-                <li><a class="doc-link" href="rusted-iron-core.html" data-i18n="ric_docs">锈铁核心开发文档</a></li>
-            </ul>
+          <h2 id="document-list-heading" data-i18n="document_list">文档列表</h2>
+          <ul class="doc-list">
+            <li>
+              <a
+                class="doc-link active"
+                aria-current="page"
+                href="fml3-environment.html"
+                data-i18n="fml3_env_setup"
+                >FML3 环境搭建</a
+              >
+            </li>
+            <li>
+              <a class="doc-link" href="manylib.html" data-i18n="manylib_docs"
+                >ManyLib 开发文档</a
+              >
+            </li>
+            <li>
+              <a
+                class="doc-link"
+                href="rusted-iron-core.html"
+                data-i18n="ric_docs"
+                >锈铁核心开发文档</a
+              >
+            </li>
+          </ul>
         </nav>
-        <article class="markdown-content" lang="zh-CN" aria-labelledby="document-title">
-            <h2>IDEA 设置篇</h2>
-            <ol>
-                <li>下载 IntelliJ IDEA，社区版已经足够，不必购买专业版。</li>
-                <li>进入 IDEA 的设置和插件市场，下载 Minecraft Development Kit；如有需要，还可以下载汉化插件。</li>
-                <li>开发所需的部分依赖需要从国外下载，因此可能需要配置网络代理。</li>
-                <li>如果你已经掌握代理配置，可以跳过这一部分。</li>
-                <li>按下 Win+I，进入“网络和 Internet → 代理”，查看并记录地址与端口。</li>
-                <li>进入 IDEA 的代理设置，选择手动代理并填入上一步的地址与端口。</li>
-            </ol>
-            <hr>
-            <h2>文件准备篇</h2>
-            <ol>
-                <li>下载并安装 Java 17，配置环境变量并记住安装路径。</li>
-                <li>准备 MITE 资源包，稍后运行客户端时使用。</li>
-            </ol>
-            <hr>
-            <h2>项目构建篇</h2>
-            <ol>
-                <li>下载 <a href="https://github.com/MinecraftIsTooEasy/fish-example-mod">模组开发模板</a> 或其他 FML3 项目。</li>
-                <li>用 IDEA 打开其中的 <code>build.gradle</code> 文件，这是项目的构建脚本。</li>
-                <li>打开后项目会自动开始构建，请等待构建完成。</li>
-                <li>如果构建失败，可依次检查：
-                    <ul>
-                        <li>项目 SDK 和语言级别是否设为 Java 17。</li>
-                        <li>报错指定的位置是否缺少 MITE.jar。</li>
-                        <li>项目依赖的 ManyLib 等前置是否已经准备好。</li>
-                    </ul>
-                </li>
-                <li>可以点击 IDEA Gradle 面板中的刷新按钮重新构建项目。</li>
-            </ol>
-            <hr>
-            <h2>项目运行篇</h2>
-            <ol>
-                <li>在 IDEA 右侧栏找到 Gradle，项目任务都在其中。</li>
-                <li><code>Tasks → build</code> 中的 <code>jar</code> 用于生成模组，<code>sourcesJar</code> 用于生成源码包。</li>
-                <li><code>Tasks → fml</code> 中的 <code>runClient</code> 和 <code>runServer</code> 分别用于运行客户端和服务端。</li>
-                <li>如果客户端提示缺少资源包，请把准备好的资源包放入项目的 <code>run</code> 文件夹。</li>
-                <li><code>genSources</code> 可以生成 Minecraft 源码，执行前应关闭已打开的源码标签页。</li>
-            </ol>
-            <hr>
-            <h2>项目编写篇</h2>
-            <ol>
-                <li>需要在开发和运行时加载的依赖使用 <code>implementation</code>。</li>
-                <li>只用于编译、不希望在运行时加载的依赖使用 <code>compileOnly</code>。</li>
-                <li>引入对应的 sources 文件后，可以在 IDEA 中查看源码和查找用法。</li>
-                <li>访问加宽需要在构建脚本和 <code>fml.mod.json</code> 中同时指定。</li>
-                <li>FML3 中通常使用 Mixin 修改 Minecraft 代码来实现功能。</li>
-            </ol>
-            <hr>
-            <h2>注意事项</h2>
-            <p>本教程适用于较新的 FML 开发环境。部分旧项目仍使用旧环境，需要按照项目说明调整构建脚本。</p>
+        <article
+          class="markdown-content"
+          lang="zh-CN"
+          aria-labelledby="document-title"
+        >
+          <h2>IDEA 设置篇</h2>
+          <ol>
+            <li>下载 IntelliJ IDEA，社区版已经足够，不必购买专业版。</li>
+            <li>
+              进入 IDEA 的设置和插件市场，下载 Minecraft Development
+              Kit；如有需要，还可以下载汉化插件。
+            </li>
+            <li>
+              开发所需的部分依赖需要从国外下载，因此可能需要配置网络代理。
+            </li>
+            <li>如果你已经掌握代理配置，可以跳过这一部分。</li>
+            <li>
+              按下 Win+I，进入“网络和 Internet → 代理”，查看并记录地址与端口。
+            </li>
+            <li>
+              进入 IDEA 的代理设置，选择手动代理并填入上一步的地址与端口。
+            </li>
+          </ol>
+          <hr />
+          <h2>文件准备篇</h2>
+          <ol>
+            <li>下载并安装 Java 17，配置环境变量并记住安装路径。</li>
+            <li>准备 MITE 资源包，稍后运行客户端时使用。</li>
+          </ol>
+          <hr />
+          <h2>项目构建篇</h2>
+          <ol>
+            <li>
+              下载
+              <a href="https://github.com/MinecraftIsTooEasy/fish-example-mod"
+                >模组开发模板</a
+              >
+              或其他 FML3 项目。
+            </li>
+            <li>
+              用 IDEA 打开其中的
+              <code>build.gradle</code> 文件，这是项目的构建脚本。
+            </li>
+            <li>打开后项目会自动开始构建，请等待构建完成。</li>
+            <li>
+              如果构建失败，可依次检查：
+              <ul>
+                <li>项目 SDK 和语言级别是否设为 Java 17。</li>
+                <li>报错指定的位置是否缺少 MITE.jar。</li>
+                <li>项目依赖的 ManyLib 等前置是否已经准备好。</li>
+              </ul>
+            </li>
+            <li>可以点击 IDEA Gradle 面板中的刷新按钮重新构建项目。</li>
+          </ol>
+          <hr />
+          <h2>项目运行篇</h2>
+          <ol>
+            <li>在 IDEA 右侧栏找到 Gradle，项目任务都在其中。</li>
+            <li>
+              <code>Tasks → build</code> 中的
+              <code>jar</code> 用于生成模组，<code>sourcesJar</code>
+              用于生成源码包。
+            </li>
+            <li>
+              <code>Tasks → fml</code> 中的 <code>runClient</code> 和
+              <code>runServer</code> 分别用于运行客户端和服务端。
+            </li>
+            <li>
+              如果客户端提示缺少资源包，请把准备好的资源包放入项目的
+              <code>run</code> 文件夹。
+            </li>
+            <li>
+              <code>genSources</code> 可以生成 Minecraft
+              源码，执行前应关闭已打开的源码标签页。
+            </li>
+          </ol>
+          <hr />
+          <h2>项目编写篇</h2>
+          <ol>
+            <li>
+              需要在开发和运行时加载的依赖使用 <code>implementation</code>。
+            </li>
+            <li>
+              只用于编译、不希望在运行时加载的依赖使用
+              <code>compileOnly</code>。
+            </li>
+            <li>
+              引入对应的 sources 文件后，可以在 IDEA 中查看源码和查找用法。
+            </li>
+            <li>
+              访问加宽需要在构建脚本和 <code>fml.mod.json</code> 中同时指定。
+            </li>
+            <li>FML3 中通常使用 Mixin 修改 Minecraft 代码来实现功能。</li>
+          </ol>
+          <hr />
+          <h2>注意事项</h2>
+          <p>
+            本教程适用于较新的 FML
+            开发环境。部分旧项目仍使用旧环境，需要按照项目说明调整构建脚本。
+          </p>
         </article>
-        </div>
+      </div>
     </main>
     <div id="site-footer"></div>
-</body>
+  </body>
 </html>
