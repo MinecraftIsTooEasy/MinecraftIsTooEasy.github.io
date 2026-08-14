@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ManyLib 配置与界面 API 概览。">
+    <meta name="theme-color" content="#b42318">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Modded MITE">
+    <meta property="og:title" content="ManyLib 开发文档 - Modded MITE">
+    <meta property="og:description" content="ManyLib 配置与界面 API 概览。">
+    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/docs/manylib.html">
+    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/docs/manylib.html">
+    <link rel="icon" href="../../files/moddedmite_32x.ico" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>ManyLib 开发文档 - Modded MITE</title>
+    <script src="../../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../../scripts/i18n.js" defer></script>
+    <script src="../../scripts/site.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+        <header class="page-heading">
+            <h1 id="document-title">ManyLib 模组开发文档</h1>
+        </header>
+        <div class="doc-layout">
+        <nav class="doc-sidebar" aria-labelledby="document-list-heading">
+            <h2 id="document-list-heading" data-i18n="document_list">文档列表</h2>
+            <ul class="doc-list">
+                <li><a class="doc-link" href="fml3-environment.html" data-i18n="fml3_env_setup">FML3 环境搭建</a></li>
+                <li><a class="doc-link active" aria-current="page" href="manylib.html" data-i18n="manylib_docs">ManyLib 开发文档</a></li>
+                <li><a class="doc-link" href="rusted-iron-core.html" data-i18n="ric_docs">锈铁核心开发文档</a></li>
+            </ul>
+        </nav>
+        <article class="markdown-content" lang="zh-CN" aria-labelledby="document-title">
+            <h2>如何从文件读写配置</h2>
+            <p>实现一个 <code>IConfigHandler</code>，然后调用 <code>save</code> 或 <code>load</code> 即可。</p>
+            <p>你可以通过继承 <code>SimpleConfigs</code> 来实现。这是一个模板。</p>
+            <h2>如何在 ManyLib 菜单中加入我的模组</h2>
+            <p>调用 <code>ConfigManager.getInstance().register()</code> 注册配置。</p>
+            <p>配置对象的 <code>.getValues()</code> 和 <code>.getHotkeys()</code> 不应该都为 <code>null</code>，否则 ManyLib 会忽略该模组。</p>
+            <h2>如何重定向模组的配置界面</h2>
+            <p>覆写 <code>IConfigHandler.getConfigScreen()</code> 方法即可。</p>
+            <h2>如何加入多个标签页</h2>
+            <p>覆写 <code>IConfigHandler.getConfigTabs()</code> 方法即可。</p>
+            <h2>关于多语言</h2>
+            <p>建议在每个配置项的名字前加入模组命名空间，避免多个模组的同名配置冲突。</p>
+            <p>可以参考 ManyLib 自身的 lang 语言文件编写模组语言文件。</p>
+        </article>
+        </div>
+    </main>
+    <div id="site-footer"></div>
+</body>
+</html>

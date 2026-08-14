@@ -1,57 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FML3的模组</title>
-    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="description" content="社区维护的 FML3 模组历史目录。" data-i18n-content="page_description_fml3">
+    <meta name="theme-color" content="#b42318">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Modded MITE">
+    <meta property="og:title" content="FML3 模组目录 - Modded MITE">
+    <meta property="og:description" content="社区维护的 FML3 模组历史目录。">
+    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/fml3-mods.html">
+    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/fml3-mods.html">
+    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <title data-i18n="page_title_fml3">FML3 模组目录 - Modded MITE</title>
+    <script src="../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../scripts/i18n.js" defer></script>
+    <script src="../scripts/site.js" defer></script>
+    <script src="../scripts/mods-table.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" async
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" async></script>
 </head>
-
 <body>
-    <div id="header"></div>
-    <script>
-        fetch("/pages/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-    </script>
-    <h1>FML3的模组</h1>
-
-    <hr>
-
-    <p>
-
-        页面仍待补充.
-
-    </p>
-
-    <table id="modTable">
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+        <header class="page-heading">
+            <h1 data-i18n="fml3_heading">FML3 模组目录</h1>
+            <p class="lead" data-i18n="fml3_notice">此表是站内历史目录；最新整理结果请以社区维护的在线目录为准。点击列标题可按该列排序。</p>
+        </header>
+        <div class="table-responsive">
+    <table id="mod-table" class="table">
+        <caption data-i18n="mod_table_caption">FML3 模组及其前置、运行端与项目链接</caption>
         <thead>
             <tr>
-                <th onclick="sortTable(0)">英文名<span class="sort-indicator" id="sort-indicator-0">⏵</span>
-                    <span class="tooltip">排序</span>
-                </th>
-                <th onclick="sortTable(1)">中文名<span class="sort-indicator" id="sort-indicator-1">⏵</span>
-                    <span class="tooltip">排序</span>
-                </th>
-                <th onclick="sortTable(2)">前置需求<span class="sort-indicator" id="sort-indicator-2">⏵</span>
-                    <span class="tooltip">排序</span>
-                </th>
-                <th onclick="sortTable(3)">端<span class="sort-indicator" id="sort-indicator-3">⏵</span>
-                    <span class="tooltip">排序</span>
-                </th>
-                <th onclick="sortTable(4)">简介<span class="sort-indicator" id="sort-indicator-4">⏵</span>
-                    <span class="tooltip">排序</span>
-                </th>
-                <th onclick="sortTable(5)">链接<span class="sort-indicator" id="sort-indicator-5">⏵</span>
-                    <span class="tooltip">排序</span>
-                </th>
+                <th scope="col" aria-sort="none"><button class="sort-button" type="button" data-column="0"><span data-i18n="mod_name_en">英文名</span><span class="sort-indicator" aria-hidden="true">↕</span></button></th>
+                <th scope="col" aria-sort="none"><button class="sort-button" type="button" data-column="1"><span data-i18n="mod_name_zh">中文名</span><span class="sort-indicator" aria-hidden="true">↕</span></button></th>
+                <th scope="col" aria-sort="none"><button class="sort-button" type="button" data-column="2"><span data-i18n="dependencies">前置需求</span><span class="sort-indicator" aria-hidden="true">↕</span></button></th>
+                <th scope="col" aria-sort="none"><button class="sort-button" type="button" data-column="3"><span data-i18n="side">运行端</span><span class="sort-indicator" aria-hidden="true">↕</span></button></th>
+                <th scope="col" aria-sort="none"><button class="sort-button" type="button" data-column="4"><span data-i18n="summary">简介</span><span class="sort-indicator" aria-hidden="true">↕</span></button></th>
+                <th scope="col" aria-sort="none"><button class="sort-button" type="button" data-column="5"><span data-i18n="project_link">链接</span><span class="sort-indicator" aria-hidden="true">↕</span></button></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody lang="zh-CN">
             <tr>
                 <td>RustedIronCore</td>
                 <td>锈铁核心</td>
@@ -238,95 +232,8 @@
             </tr>
         </tbody>
     </table>
-
-    <script>
-        let currentSortColumn = -1; // 当前排序的列索引
-        let currentSortOrder = 'none'; // 当前排序顺序
-
-        const table = document.getElementById("modTable");
-        const originalRows = Array.from(table.rows).slice(1);
-
-        function sortTable(columnIndex) {
-            const rows = Array.from(table.rows).slice(1);
-
-            // 检查当前列是否是已排序列
-            if (currentSortColumn === columnIndex) {
-                // 如果是已排序列，检查当前排序顺序
-                if (currentSortOrder === 'asc') {
-                    // 当前是升序，切换到降序
-                    currentSortOrder = 'desc';
-                } else if (currentSortOrder === 'desc') {
-                    // 当前是降序，恢复原始顺序
-                    currentSortOrder = 'none';
-                } else if (currentSortOrder === 'none') {
-                    currentSortOrder = 'asc';
-                }
-            } else {
-                // 如果是新的列，设置为升序
-                currentSortColumn = columnIndex;
-                currentSortOrder = 'asc';
-            }
-
-            // 排序逻辑
-            if (currentSortOrder === 'asc') {
-                rows.sort((rowA, rowB) => {
-                    const cellA = rowA.cells[columnIndex].innerText;
-                    const cellB = rowB.cells[columnIndex].innerText;
-
-                    return cellA.localeCompare(cellB); // 字符串排序
-
-                });
-            } else if (currentSortOrder === 'desc') {
-                rows.sort((rowA, rowB) => {
-                    const cellA = rowA.cells[columnIndex].innerText;
-                    const cellB = rowB.cells[columnIndex].innerText;
-
-                    return cellB.localeCompare(cellA); // 字符串排序
-
-                });
-            } else if (currentSortOrder === 'none') {
-                // TODO 恢复原顺序
-            }
-
-            // 更新表格
-            rows.forEach(row => table.tBodies[0].appendChild(row));
-
-            // 更新排序指示器
-            updateSortIndicators();
-        }
-
-        function updateSortIndicators() {
-            const indicators = document.querySelectorAll('.sort-indicator');
-            indicators.forEach((indicator, index) => {
-                if (index === currentSortColumn) {// 当前排序列
-                    switch (currentSortOrder) {
-                        case 'asc':
-                            indicator.innerHTML = '▲';
-                            break;
-                        case 'desc':
-                            indicator.innerHTML = '▼';
-                            break;
-                        default:
-                            indicator.innerHTML = '⏵';
-                    }
-                } else {
-                    indicator.innerHTML = '⏵'; // 其他列的复合符号
-                }
-            });
-        }
-    </script>
-
-    <hr>
-
-    <div id="footer"></div>
-
-    <script>
-        fetch("/pages/footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
+        </div>
+    </main>
+    <div id="site-footer"></div>
 </body>
-
 </html>

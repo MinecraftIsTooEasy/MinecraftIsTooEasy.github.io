@@ -1,39 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于Modded MITE社区</title>
-    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="description" content="Modded MITE 社区的联系渠道与协作入口。" data-i18n-content="page_description_contact">
+    <meta name="theme-color" content="#b42318">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Modded MITE">
+    <meta property="og:title" content="关于社区 - Modded MITE">
+    <meta property="og:description" content="Modded MITE 社区的联系渠道与协作入口。">
+    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/contact.html">
+    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/contact.html">
+    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <title data-i18n="page_title_contact">关于社区 - Modded MITE</title>
+    <script src="../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../scripts/i18n.js" defer></script>
+    <script src="../scripts/site.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" async
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" async></script>
 </head>
-
 <body>
-    <div id="header"></div>
-    <script>
-        fetch("/pages/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-    </script>
-
-    <p>
-        待建设
-    </p>
-
-    <hr>
-
-    <div id="footer"></div>
-
-    <script>
-        fetch("/pages/footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+        <header class="page-heading">
+            <h1 data-i18n="contact_heading">关于 Modded MITE 社区</h1>
+            <p class="lead" data-i18n="contact_intro">社区由 MITE 玩家和开发者共同维护，主要工作包括模组开发、兼容测试、资源整理与文档维护。</p>
+        </header>
+        <section class="content-section" aria-labelledby="contact-channels-heading">
+            <h2 id="contact-channels-heading" data-i18n="contact_channels">联系与参与</h2>
+            <ul class="guide-list">
+                <li class="guide-item"><h3><a href="https://github.com/MinecraftIsTooEasy" data-i18n="github_org">GitHub 组织</a></h3><p data-i18n="contact_github">在 GitHub 查看项目、提交问题或参与开发。</p></li>
+                <li class="guide-item"><h3 data-i18n="qq_group">QQ 群：661223990</h3><p data-i18n="contact_qq">加入 QQ 群 661223990，咨询游戏、模组和开发问题。</p></li>
+            </ul>
+            <p class="notice" data-i18n="contact_contribute">提交网站改进时，请附上清晰的复现步骤、来源链接或内容依据。</p>
+        </section>
+    </main>
+    <div id="site-footer"></div>
 </body>
-
 </html>

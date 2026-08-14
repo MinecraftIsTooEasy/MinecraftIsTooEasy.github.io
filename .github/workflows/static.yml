@@ -31,6 +31,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate site structure and links
+        run: node scripts/check-site.mjs
+      - name: Check JavaScript syntax
+        run: |
+          node --check scripts/site.js
+          node --check scripts/i18n.js
+          node --check scripts/mods-table.js
+          node --check scripts/check-site.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

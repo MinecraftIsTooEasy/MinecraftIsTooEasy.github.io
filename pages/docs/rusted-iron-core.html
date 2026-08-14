@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="锈铁核心公共类、接口与事件系统概览。">
+    <meta name="theme-color" content="#b42318">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Modded MITE">
+    <meta property="og:title" content="锈铁核心开发文档 - Modded MITE">
+    <meta property="og:description" content="锈铁核心公共类、接口与事件系统概览。">
+    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/docs/rusted-iron-core.html">
+    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/docs/rusted-iron-core.html">
+    <link rel="icon" href="../../files/moddedmite_32x.ico" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>锈铁核心开发文档 - Modded MITE</title>
+    <script src="../../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../../scripts/i18n.js" defer></script>
+    <script src="../../scripts/site.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+        <header class="page-heading">
+            <h1 id="document-title">锈铁核心开发文档</h1>
+        </header>
+        <div class="doc-layout">
+        <nav class="doc-sidebar" aria-labelledby="document-list-heading">
+            <h2 id="document-list-heading" data-i18n="document_list">文档列表</h2>
+            <ul class="doc-list">
+                <li><a class="doc-link" href="fml3-environment.html" data-i18n="fml3_env_setup">FML3 环境搭建</a></li>
+                <li><a class="doc-link" href="manylib.html" data-i18n="manylib_docs">ManyLib 开发文档</a></li>
+                <li><a class="doc-link active" aria-current="page" href="rusted-iron-core.html" data-i18n="ric_docs">锈铁核心开发文档</a></li>
+            </ul>
+        </nav>
+        <article class="markdown-content" lang="zh-CN" aria-labelledby="document-title">
+            <p>本库提供的内容按使用方法大致分为以下几类。</p>
+            <h2>公共父类</h2>
+            <p>例如 <code>DoorBlock</code>、<code>PaneBlock</code>、<code>WorkbenchBlock</code> 等。</p>
+            <p>这些方块和物品的注册涉及较多源码修改。继承这些父类后，就不必自行编写重复的 Mixin。</p>
+            <h2>公共接口</h2>
+            <p>例如 <code>IArmorMaterial</code>、<code>IBowMaterial</code>、<code>IRockItem</code> 等。</p>
+            <p>这些接口通常表示物品实现了某些性质，也是对重复 Mixin 的封装。</p>
+            <h2>事件监听</h2>
+            <p>本模组的大部分功能由事件系统构成，事件调度器实例位于 <code>Handlers</code> 类中。</p>
+            <p>调用者在模组入口点向对应调度器调用 <code>register</code>，并实现相应接口。</p>
+            <p>调度器分为一次事件和多次事件：</p>
+            <ul>
+                <li>一次事件通常用于注册合成配方、熔炉配方和村民交易等游戏对象。</li>
+                <li>多次事件用于处理熔炉燃烧、沙砾掉落等持续发生的游戏逻辑。</li>
+            </ul>
+            <p>一次事件调度器继承 <code>AbstractHandler&lt;Consumer&lt;T&gt;&gt;</code>，需要提供一个 <code>Consumer&lt;T&gt;</code>。</p>
+            <p>多次事件调度器直接继承 <code>AbstractHandler&lt;T&gt;</code>，需要提供一个监听器。</p>
+        </article>
+        </div>
+    </main>
+    <div id="site-footer"></div>
+</body>
+</html>

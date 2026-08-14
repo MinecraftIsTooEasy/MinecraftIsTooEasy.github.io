@@ -1,57 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MITE资源包使用方式</title>
-    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="description" content="MITE 原版及 Better Game Setting 环境下的资源包安装步骤。" data-i18n-content="page_description_pack_usage">
+    <meta name="theme-color" content="#b42318">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Modded MITE">
+    <meta property="og:title" content="资源包安装 - Modded MITE">
+    <meta property="og:description" content="MITE 原版及 Better Game Setting 环境下的资源包安装步骤。">
+    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/resource-pack-usage.html">
+    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/resource-pack-usage.html">
+    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <title data-i18n="page_title_pack_usage">资源包安装 - Modded MITE</title>
+    <script src="../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../scripts/i18n.js" defer></script>
+    <script src="../scripts/site.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" async
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" async></script>
 </head>
-
 <body>
-    <div id="header"></div>
-    <script>
-        fetch("/pages/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-    </script>
-
-    <h2>
-        若未安装Better Game Setting模组
-    </h2>
-
-
-    <ol class="enumeration-list">
-        <li>确保你的文件扩展名已设置为显示（很多很多很多人重命名为MITE Resource Pack 1.6.4.zip.zip）</li>
-        <li>下载你要的材质包</li>
-        <li>将你下好的材质包重命名为MITE Resource Pack 1.6.4.zip</li>
-        <li>将这个压缩包放进MITE游戏目录的材质包文件夹中：MITE文件夹/.minecraft/resourcepacks/</li>
-        <li>启动MITE，如果能进入游戏说明安装成功。</li>
-    </ol>
-
-    <h2>
-        若安装Better Game Setting模组
-    </h2>
-
-    <ol class="enumeration-list">
-        <li>直接将压缩包放进MITE游戏目录的材质包文件夹中：MITE文件夹/.minecraft/resourcepacks/</li>
-        <li>启动游戏,游戏设置->资源包->选择刚才放入的资源包</li>
-    </ol>
-
-    <hr>
-
-    <div id="footer"></div>
-
-    <script>
-        fetch("/pages/footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+        <header class="page-heading"><h1 data-i18n="pack_usage_heading">资源包安装方法</h1></header>
+        <section class="content-section" aria-labelledby="without-bgs-heading">
+            <h2 id="without-bgs-heading" data-i18n="without_bgs">未安装 Better Game Setting</h2>
+            <ol class="enumeration-list">
+                <li data-i18n="pack_step_extensions">确认系统已显示文件扩展名，避免把文件误命名为 .zip.zip。</li>
+                <li data-i18n="pack_step_download">下载所需资源包。</li>
+                <li data-i18n="pack_step_rename">将资源包重命名为 MITE Resource Pack 1.6.4.zip。</li>
+                <li data-i18n="pack_step_move">把 ZIP 放入 MITE 游戏目录的 .minecraft/resourcepacks/ 文件夹。</li>
+                <li data-i18n="pack_step_launch">启动 MITE；能够正常进入游戏即表示安装成功。</li>
+            </ol>
+        </section>
+        <section class="content-section" aria-labelledby="with-bgs-heading">
+            <h2 id="with-bgs-heading" data-i18n="with_bgs">已安装 Better Game Setting</h2>
+            <ol class="enumeration-list">
+                <li data-i18n="pack_step_bgs_move">把下载的 ZIP 直接放入 .minecraft/resourcepacks/ 文件夹，无需重命名。</li>
+                <li data-i18n="pack_step_bgs_select">启动游戏，在“游戏设置 → 资源包”中选择刚放入的资源包。</li>
+            </ol>
+        </section>
+    </main>
+    <div id="site-footer"></div>
 </body>
-
 </html>

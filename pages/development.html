@@ -1,121 +1,45 @@
-<!DOCTYPE html>
-<html lang="zh">
-
+<!doctype html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="development_index">开发文档索引</title>
-    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
-    <script src="/scripts/i18n.js"></script>
-    <script src="/scripts/markdown-parser.js"></script>
+    <meta name="description" content="FishModLoader、ManyLib 与锈铁核心开发文档。" data-i18n-content="page_description_development">
+    <meta name="theme-color" content="#b42318">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Modded MITE">
+    <meta property="og:title" content="开发文档 - Modded MITE">
+    <meta property="og:description" content="FishModLoader、ManyLib 与锈铁核心开发文档。">
+    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/development.html">
+    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/development.html">
+    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <title data-i18n="page_title_development">开发文档 - Modded MITE</title>
+    <script src="../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../scripts/i18n.js" defer></script>
+    <script src="../scripts/site.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" async
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" async></script>
 </head>
-
 <body>
-<div id="header"></div>
-<script>
-    fetch("/pages/header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        });
-</script>
-
-<div class="container">
-    <h1 data-i18n="development_index">开发文档索引</h1>
-    <hr>
-    <div id="development-index"></div>
-    <div id="doc-content" class="markdown-content"></div>
-</div>
-
-<script>
-    const docs = [
-        { name: 'dev_env_fishv1', path: '/docs/dev/dev_env_fishv1.md' },
-        { name: 'dev_env_fishv3', path: '/docs/dev/dev_env_fishv3.md' },
-        { name: 'manylib', path: '/docs/dev/manylib.md' },
-        { name: 'rusted_iron_core', path: '/docs/dev/rusted_iron_core.md' }
-    ];
-
-    let docTitles = {};
-
-    document.addEventListener('DOMContentLoaded', async () => {
-        await loadAllDocTitles();
-        renderDocIndex();
-    });
-
-    async function loadAllDocTitles() {
-        const titlePromises = docs.map(async (doc) => {
-            try {
-                const response = await fetch(doc.path);
-                if (response.ok) {
-                    const markdown = await response.text();
-                    const title = extractTitle(markdown);
-                    docTitles[doc.path] = title || doc.name;
-                } else {
-                    docTitles[doc.path] = doc.name;
-                }
-            } catch (error) {
-                docTitles[doc.path] = doc.name;
-            }
-        });
-
-        await Promise.all(titlePromises);
-    }
-
-    function renderDocIndex() {
-        const indexContainer = document.getElementById('development-index');
-        if (!indexContainer) return;
-
-        let html = '<ul class="cases-list">';
-        docs.forEach(doc => {
-            const displayName = docTitles[doc.path] || doc.name;
-            html += `<li><a href="#" onclick="loadDoc('${doc.path}'); return false;">${displayName}</a></li>`;
-        });
-        html += '</ul>';
-
-        indexContainer.innerHTML = html;
-    }
-
-    function loadDoc(path) {
-        const contentContainer = document.getElementById('doc-content');
-        if (!contentContainer) return;
-
-        contentContainer.innerHTML = '<p>Loading...</p>';
-
-        fetch(path)
-            .then(response => {
-                if (!response.ok) throw new Error('Document loading failed');
-                return response.text();
-            })
-            .then(markdown => {
-                const html = parseMarkdown(markdown);
-                contentContainer.innerHTML = `<hr>${html}`;
-            })
-            .catch(error => {
-                contentContainer.innerHTML = `<p>Error: ${error.message}</p>`;
-            });
-    }
-
-    function extractTitle(markdown) {
-        const match = markdown.match(/^# (.*$)/m);
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-</script>
-
-<hr>
-
-<div id="footer"></div>
-
-<script>
-    fetch("/pages/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        });
-</script>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+        <header class="page-heading">
+            <h1 data-i18n="development_index">开发文档</h1>
+            <p class="lead" data-i18n="page_description_development">FishModLoader、ManyLib 与锈铁核心开发文档。</p>
+        </header>
+        <section class="content-section" aria-labelledby="document-list-heading">
+            <h2 id="document-list-heading" data-i18n="document_list">文档列表</h2>
+            <ul class="guide-list">
+                <li class="guide-item"><h3><a href="docs/fml3-environment.html" data-i18n="fml3_env_setup">FML3 环境搭建</a></h3><p data-i18n="fml3_setup_desc">配置 Java 17、IDEA 和 FML3 开发环境。</p></li>
+                <li class="guide-item"><h3><a href="docs/manylib.html" data-i18n="manylib_docs">ManyLib 开发文档</a></h3><p>ManyLib 配置与界面 API 概览。</p></li>
+                <li class="guide-item"><h3><a href="docs/rusted-iron-core.html" data-i18n="ric_docs">锈铁核心开发文档</a></h3><p>锈铁核心公共类、接口与事件系统概览。</p></li>
+            </ul>
+        </section>
+    </main>
+    <div id="site-footer"></div>
 </body>
-
 </html>

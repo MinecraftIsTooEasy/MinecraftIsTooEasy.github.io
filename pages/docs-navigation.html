@@ -1,49 +1,51 @@
-<!DOCTYPE html>
-<html lang="zh">
-
+<!doctype html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="tutorials_index">教程索引</title>
-    <link rel="icon" href="/files/moddedmite_32x.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
-    <script src="/scripts/i18n.js"></script>
-    <script src="/scripts/markdown-parser.js"></script>
+    <meta name="description" content="Modded MITE 使用教程与开发入门导航。" data-i18n-content="page_description_tutorials">
+    <meta name="theme-color" content="#b42318">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Modded MITE">
+    <meta property="og:title" content="教程 - Modded MITE">
+    <meta property="og:description" content="Modded MITE 使用教程与开发入门导航。">
+    <meta property="og:url" content="https://minecraftistooeasy.github.io/pages/docs-navigation.html">
+    <link rel="canonical" href="https://minecraftistooeasy.github.io/pages/docs-navigation.html">
+    <link rel="icon" href="../files/moddedmite_32x.ico" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <title data-i18n="page_title_tutorials">教程 - Modded MITE</title>
+    <script src="../scripts/jquery-4.0.0.min.js" defer></script>
+    <script src="../scripts/i18n.js" defer></script>
+    <script src="../scripts/site.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" async
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" async></script>
 </head>
-
 <body>
-    <div id="header"></div>
-    <script>
-        fetch("/pages/header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-    </script>
-
-    <div class="container">
-        <h1 data-i18n="tutorials_index">教程索引</h1>
-        <hr>
-        <div id="tutorials-index"></div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderDocIndex('tutorials', 'tutorials-index');
-        });
-    </script>
-
-    <hr>
-
-    <div id="footer"></div>
-
-    <script>
-        fetch("/pages/footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+    <div id="site-header"></div>
+    <main id="main-content" class="site-main site-container">
+        <header class="page-heading">
+            <h1 data-i18n="tutorials_index">教程索引</h1>
+            <p class="lead" data-i18n="page_description_tutorials">Modded MITE 使用教程与开发入门导航。</p>
+        </header>
+        <section class="content-section" aria-labelledby="player-guides-heading">
+            <h2 id="player-guides-heading" data-i18n="player_guides">玩家指南</h2>
+            <ul class="guide-list">
+                <li class="guide-item"><h3><a href="resource-pack-usage.html" data-i18n="resource_pack_usage">查看资源包安装方法</a></h3><p data-i18n="resource_pack_guide_desc">安装和切换 MITE 资源包。</p></li>
+                <li class="guide-item"><h3><a href="about-fml.html" data-i18n="what_is_fml">了解 FishModLoader</a></h3><p data-i18n="fml_guide_desc">了解 FML1 与 FML3 的区别。</p></li>
+            </ul>
+        </section>
+        <section class="content-section" aria-labelledby="developer-guides-heading">
+            <h2 id="developer-guides-heading" data-i18n="developer_guides">开发入门</h2>
+            <ul class="guide-list">
+                <li class="guide-item"><h3><a href="docs/fml3-environment.html" data-i18n="fml3_env_setup">FML3 环境搭建</a></h3><p data-i18n="fml3_setup_desc">配置 Java 17、IDEA 和 FML3 开发环境。</p></li>
+                <li class="guide-item"><h3><a href="development.html" data-i18n="development_index">开发文档</a></h3><p data-i18n="dev_docs_desc">浏览 ManyLib、锈铁核心等开发文档。</p></li>
+            </ul>
+        </section>
+    </main>
+    <div id="site-footer"></div>
 </body>
-
 </html>
